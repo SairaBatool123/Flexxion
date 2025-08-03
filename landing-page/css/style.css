@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Georgia, Times, 'Times New Roman', serif;
+  }
+  .container nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #fff;
+  }
+
+  nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+
+  nav button {
+    padding: 7px 15px;
+    background-color: rgb(233, 88, 88);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+@media (max-width: 768px) {
+  nav ul{
+    display: none;
+  }
+  .manager img {
+  width: 80vw;
+  height: 50vh;
+}
+}
+  .manager {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 5%;
+  }
+.manager img{
+  width: 500px;
+  height: 290px;
+ display: flex;
+ justify-self:center;
+ align-self: center;
+}
+  .para {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .text {
+    color: gray;
+    margin: 15px 0;
+  }
+
+  .butn button,
+  .but {
+    background-color: rgb(97, 97, 212);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #b2 {
+    background-color: rgb(218, 209, 209);
+    color: black;
+  }
+
+  #b1:hover,
+  #b2:hover,
+  .but:hover,
+  .bt:hover {
+    background-color:  rgb(229, 229, 231);
+    color: black;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+
+  .border,
+  .bond,
+  .border1 {
+    background-color: rgb(97, 97, 212);
+    height: 200px;
+    width: 55vw;
+    border-radius: 200px 0 0 200px;
+    margin-top: -100px;
+  }
+
+  .border1 {
+    border-radius: 0 200px 200px 0;
+  }
+
+  .features,
+  .download,
+  .sl {
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .feature,
+  #clr {
+    background-color: #f5eded;
+  }
+
+  .manage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .add {
+    border: 3px solid rgb(47, 186, 204);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+  }
+
+  .questions ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+  }
+
+  .questions li {
+    padding: 10px;
+    border-bottom: 1px solid gray;
+  }
+
+  .btn {
+    text-align: center;
+    padding: 40px;
+  }
+
+  .sl {
+    background-color: rgb(97, 97, 212);
+    color: white;
+  }
+
+  #email {
+    width: 300px;
+    height: 35px;
+    border-radius: 4px;
+    border: none;
+    margin: 10px;
+  }
+
+  .bt {
+    background-color: crimson;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(11, 11, 58);
+    color: white;
+    padding: 20px 5%;
+    flex-wrap: wrap;
+  }
+
+  .footer ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer a {
+    text-decoration: none;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .manager,
+    .footer,
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .add {
+      width: 80%;
+      margin: auto;
+    }
+
+    .border,
+    .bond,
+    .border1 {
+      display: none;
+    }
+
+    .image {
+      max-width: 80%;
+      margin: auto;
+      display: block;
+    }
+  }

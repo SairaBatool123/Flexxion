@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+   "CountryName": "Japan",
+    "Capital": "Tokyo",
+    "Population": 126300000,
+    "InterestingFact": "Technology"
+  },
+  {
+    "id": 2,
+    "CountryName": "Canada",
+    "Capital": "Ottawa",
+    "Population": 38246000,
+    "InterestingFact": "Maple Syrup"
+  },
+  {
+    "id": 3,
+    "CountryName": "France",
+    "Capital": "Paris",
+    "Population": 67410000,
+    "InterestingFact": "Eiffel Tower"
+  },
+  {
+    "id": 4,
+    "CountryName": "Brazil",
+    "Capital": "Brasília",
+    "Population": 214300000,
+    "InterestingFact": "Amazon Rainforest"
+  },
+  {
+    "id": 5,
+    "CountryName": "Australia",
+    "Capital": "Canberra",
+    "Population": 25920000,
+    "InterestingFact": "Great Barrier Reef"
+  },
+  {
+    "id": 6,
+    "CountryName": "India",
+    "Capital": "New Delhi",
+    "Population": 1417000000,
+    "InterestingFact": "Diverse Cultures"
+  },
+  {
+    "id": 7,
+    "CountryName": "United States",
+    "Capital": "Washington, D.C.",
+    "Population": 331900000,
+    "InterestingFact": "Silicon Valley"
+  },
+  {
+    "id": 8,
+    "CountryName": "South Africa",
+    "Capital": "Pretoria",
+    "Population": 60140000,
+    "InterestingFact": "Diverse Wildlife"
+  },
+  {
+    "id": 9,
+    "CountryName": "Germany",
+    "Capital": "Berlin",
+    "Population": 83900000,
+    "InterestingFact":"Historical Architecture"
+  },
+  {
+    "id": 10,
+    "CountryName": "Italy",
+    "Capital": "Rome",
+    "Population": 59060000,
+    "InterestingFact": "Renaissance Art"
+  }
+]
