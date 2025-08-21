@@ -67,8 +67,18 @@ const CommentModal = ({ post, onClose }) => {
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 transition-colors"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
@@ -77,17 +87,21 @@ const CommentModal = ({ post, onClose }) => {
         <div className="p-4 border-b bg-gray-50">
           <div className="flex items-start space-x-3">
             <img
-              src={post.userId.profileImage || 'https://via.placeholder.com/32x32?text=U'}
+              src={post.userId.profileImage}
               alt={post.userId.name}
               className="w-8 h-8 rounded-full object-cover"
               onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/32x32?text=U';
+                e.target.style.display = "none";
               }}
             />
             <div className="flex-1">
               <div className="flex items-center space-x-2">
-                <span className="font-medium text-gray-900">{post.userId.name}</span>
-                <span className="text-sm text-gray-500">{formatDate(post.createdAt)}</span>
+                <span className="font-medium text-gray-900">
+                  {post.userId.name}
+                </span>
+                <span className="text-sm text-gray-500">
+                  {formatDate(post.createdAt)}
+                </span>
               </div>
               <p className="text-gray-700 text-sm mt-1">{post.text}</p>
             </div>
@@ -100,18 +114,22 @@ const CommentModal = ({ post, onClose }) => {
             post.comments.map((comment) => (
               <div key={comment._id} className="flex items-start space-x-3">
                 <img
-                  src={comment.userId?.profileImage || 'https://via.placeholder.com/32x32?text=U'}
+                  src={comment.userId?.profileImage}
                   alt={comment.userName}
                   className="w-8 h-8 rounded-full object-cover"
                   onError={(e) => {
-                    e.target.src = 'https://via.placeholder.com/32x32?text=U';
+                    e.target.style.display = "none";
                   }}
                 />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                      <span className="font-medium text-gray-900">{comment.userName}</span>
-                      <span className="text-sm text-gray-500">{formatDate(comment.createdAt)}</span>
+                      <span className="font-medium text-gray-900">
+                        {comment.userName}
+                      </span>
+                      <span className="text-sm text-gray-500">
+                        {formatDate(comment.createdAt)}
+                      </span>
                     </div>
                     {canDeleteComment(comment, post, user._id) && (
                       <button
@@ -119,8 +137,18 @@ const CommentModal = ({ post, onClose }) => {
                         className="text-gray-400 hover:text-red-500 transition-colors"
                         title="Delete comment"
                       >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                          />
                         </svg>
                       </button>
                     )}
@@ -131,8 +159,18 @@ const CommentModal = ({ post, onClose }) => {
             ))
           ) : (
             <div className="text-center text-gray-500 py-8">
-              <svg className="w-12 h-12 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              <svg
+                className="w-12 h-12 mx-auto mb-4 text-gray-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                />
               </svg>
               <p>No comments yet. Be the first to comment!</p>
             </div>
@@ -143,11 +181,11 @@ const CommentModal = ({ post, onClose }) => {
         <div className="p-4 border-t">
           <form onSubmit={handleSubmitComment} className="flex space-x-3">
             <img
-              src={user.profileImage || 'https://via.placeholder.com/32x32?text=U'}
+              src={user.profileImage}
               alt={user.name}
               className="w-8 h-8 rounded-full object-cover"
               onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/32x32?text=U';
+                e.target.style.display = "none";
               }}
             />
             <div className="flex-1">
@@ -168,7 +206,7 @@ const CommentModal = ({ post, onClose }) => {
               {isSubmitting ? (
                 <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
               ) : (
-                'Post'
+                "Post"
               )}
             </button>
           </form>

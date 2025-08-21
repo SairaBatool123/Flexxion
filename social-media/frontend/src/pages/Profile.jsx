@@ -29,11 +29,15 @@ const Profile = () => {
         } else {
           // Fetch other user's profile
           const token = localStorage.getItem('token');
-          const response = await fetch(`http://localhost:5000/api/users/${userId}`, {
-            headers: {
-              'Authorization': `Bearer ${token}`,
-            },
-          });
+          
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/users/${userId}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
 
           if (!response.ok) {
             throw new Error('User not found');

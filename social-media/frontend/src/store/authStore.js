@@ -13,13 +13,16 @@ const useAuthStore = create(
       login: async (email, password) => {
         set({ isLoading: true });
         try {
-          const response = await fetch('http://localhost:5000/api/auth/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-          });
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/auth/login`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, password }),
+            }
+          );
 
           const data = await response.json();
 
@@ -48,13 +51,17 @@ const useAuthStore = create(
       signup: async (name, email, password, profileImage = null) => {
         set({ isLoading: true });
         try {
-          const response = await fetch('http://localhost:5000/api/auth/signup', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, password, profileImage }),
-          });
+         
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/auth/signup`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ name, email, password, profileImage }),
+            }
+          );
 
           const data = await response.json();
 
@@ -86,11 +93,14 @@ const useAuthStore = create(
 
         set({ isLoading: true });
         try {
-          const response = await fetch('http://localhost:5000/api/auth/me', {
-            headers: {
-              'Authorization': `Bearer ${token}`,
-            },
-          });
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/auth/me`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
 
           if (response.ok) {
             const data = await response.json();
@@ -124,14 +134,17 @@ const useAuthStore = create(
       updateUser: async (userId, updateData) => {
         try {
           const token = localStorage.getItem('token');
-          const response = await fetch(`http://localhost:5000/api/users/${userId}`, {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}`,
-            },
-            body: JSON.stringify(updateData),
-          });
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/users/${userId}`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+              },
+              body: JSON.stringify(updateData),
+            }
+          );
 
           const data = await response.json();
 
